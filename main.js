@@ -13,6 +13,6 @@ randomButton.addEventListener('click', randomColor)
 function randomColor () {
     box1.style.backgroundColor = "blue";
     box2.style.backgroundColor = "red";
-    body.style.backgroundColor = "black";
+    body.style.backgroundColor = "brown";
 
 }
