@@ -10,7 +10,7 @@ let orderedList = document.querySelector('.orderedList')
 
 // Utility Functions
 function random(number){
-    return Math.floor(Math.random()*number)
+    return Math.floor(Math.random()*(number+1))
 }
 
 //Generate random color
