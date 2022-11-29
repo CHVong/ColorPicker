@@ -38,6 +38,8 @@ h1{
     width: 10vmax;
     height: 10vmax;
     border: 2px solid black;
+    cursor: url(copy.svg), auto;
+    transition: all .15s;
 }
 
 .buttoncontainer{

@@ -38,6 +38,20 @@ function openSidebar (){
     
 }
 
+//Copying color on click
+
+box1.addEventListener('click', copyColor)
+box2.addEventListener('click', copyColor)
+
+function copyColor(){
+    let clickedBox = event.target.id
+    navigator.clipboard.writeText(document.querySelector(`.${clickedBox}`).style.backgroundColor)
+    document.querySelector(`.${clickedBox}`).style.scale = '90%'
+    setTimeout(function () {
+        document.querySelector(`.${clickedBox}`).style.scale = '100%'
+    }, 100);
+}
+
 //Saving colors
 
 saveButton.addEventListener('click',save)
