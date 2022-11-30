@@ -76,6 +76,7 @@ button:hover{
     height: 100%;
     width: 15vw;
     right: -15%;
+    transition: all .5s;
 }
 .sidecontainer button{
     position: absolute;
@@ -86,4 +87,5 @@ button:hover{
 .sidecontainer h1{
     font-size: 1rem;
     text-align: center;
+    text-decoration: underline;
 }
