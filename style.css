@@ -81,6 +81,7 @@ button:hover{
     position: absolute;
     top: 50%;
     left: -20%;
+    box-shadow:  0 0 2px 2px black;
 }
 .sidecontainer h1{
     font-size: 1rem;

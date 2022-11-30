@@ -29,8 +29,10 @@ sidebarButton.addEventListener('click', openSidebar)
 function openSidebar (){
     if(sideContainer.style.right != '0%'){
         sideContainer.style.right = '0%'
+        sidebarButton.innerHTML = `<i class="fa-solid fa-angles-right"></i>`
     } else {
         sideContainer.style.right = '-15%'
+        sidebarButton.innerHTML = `<i class="fa-solid fa-angles-left"></i>`
     }
     
 }
