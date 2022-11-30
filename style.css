@@ -89,3 +89,34 @@ button:hover{
     text-align: center;
     text-decoration: underline;
 }
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    font-size: .75rem;
+}
+footer p a{
+    color: black;
+}
+
+
+/* Mobile responsiveness LIMITED RESPONSIVENESS FOR SIDEBAR TO WORK */
+
+@media screen and (max-width: 1500px) {
+    .sidecontainer button{
+        left: -30%;
+    }
+  }
+
+@media screen and (max-width: 1000px) {
+    .sidecontainer button{
+        left: -40%;
+    }
+  }
+
+@media screen and (max-width: 500px) {
+    .sidecontainer button{
+        left: -50%;
+    }
+  }
