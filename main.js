@@ -11,8 +11,14 @@ let body = document.querySelector('body');
 randomButton.addEventListener('click', randomColor)
 
 function randomColor () {
-    box1.style.backgroundColor = "blue";
-    box2.style.backgroundColor = "red";
-    body.style.backgroundColor = "brown";
+    box1.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random()})`;
+    box2.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random()})`;
+    body.style.background = `linear-gradient(to right, ${box2.style.backgroundColor}, ${box1.style.backgroundColor}`;
 
 }
+
+function random(number){
+    return Math.floor(Math.random()*number)
+}
+
+
