@@ -9,7 +9,7 @@ let sideContainer = document.querySelector('.sidecontainer')
 let orderedList = document.querySelector('.orderedList')
 
 // Utility Functions
-function random(number){
+function random(number){ //generate random number +1 at end to include max param
     return Math.floor(Math.random()*(number+1))
 }
 
@@ -17,17 +17,32 @@ function random(number){
 randomButton.addEventListener('click', randomColor)
 
 function randomColor () {
+    //generate 2 random rgba for 2 boxes
     box1.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
+
     box2.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
+    //split the middle with gradient
     body.style.background = `linear-gradient(to right, ${box2.style.backgroundColor}, ${box1.style.backgroundColor}`;
 
 }
+
+// Generate random color on page load
+
+function loadRandomColor(){
+    box1.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
+
+    box2.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
+
+    body.style.background = `linear-gradient(to right, ${box2.style.backgroundColor}, ${box1.style.backgroundColor}`;
+}
+
+window.addEventListener('load', (loadRandomColor))
 
 //Open sidebar
 
 sidebarButton.addEventListener('click', openSidebar)
 
-function openSidebar (){
+function openSidebar (){ //show/hide and changes different icon for sidebar
     if(sideContainer.style.right != '0%'){
         sideContainer.style.right = '0%'
         sidebarButton.innerHTML = `<i class="fa-solid fa-angles-right"></i>`
@@ -38,18 +53,30 @@ function openSidebar (){
     
 }
 
-//Copying color on click
+//Copying color on click and generate full page background color change
 
 box1.addEventListener('click', copyColor)
 box2.addEventListener('click', copyColor)
 
 function copyColor(){
-    let clickedBox = event.target.id
-    navigator.clipboard.writeText(document.querySelector(`.${clickedBox}`).style.backgroundColor)
+    let clickedBox = event.target.id  //grab from click event box1 or box2 id
+
+    navigator.clipboard.writeText(document.querySelector(`.${clickedBox}`).style.backgroundColor) //code to copy the rgba color
+
+    body.style.background = document.querySelector(`.${clickedBox}`).style.backgroundColor;
+
     document.querySelector(`.${clickedBox}`).style.scale = '90%'
+    document.querySelector(`.${clickedBox}`).firstElementChild.classList.add('show')
+
+    //delayed functions to add animations to copied after click
+
     setTimeout(function () {
         document.querySelector(`.${clickedBox}`).style.scale = '100%'
-    }, 100);
+    }, 150);
+
+    setTimeout(function () {
+        document.querySelector(`.${clickedBox}`).firstElementChild.classList.remove('show')
+    }, 250);
 }
 
 //Saving colors
@@ -63,12 +90,6 @@ function save(){
 
 //To do
 
-//page load random color
-
-//transparent box when click to copy or copied text centered and fade after 1 sec
-
-//generate background of color on clicked copied
-
 //saved color list to have 2 boxes
 
 //saved colors box will generate background on click
@@ -76,3 +97,5 @@ function save(){
 //delete button for saved colors list
 
 //local storage to persist saved colors
+
+//responsive design for sidebar width
