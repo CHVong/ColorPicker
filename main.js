@@ -6,6 +6,7 @@ let saveButton = document.querySelector('.save-button');
 let body = document.querySelector('body');
 let sidebarButton = document.querySelector('.sidebar-button')
 let sideContainer = document.querySelector('.sidecontainer')
+let orderedList = document.querySelector('.orderedList')
 
 // Functions
 function random(number){
@@ -16,8 +17,8 @@ function random(number){
 randomButton.addEventListener('click', randomColor)
 
 function randomColor () {
-    box1.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random()})`;
-    box2.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random()})`;
+    box1.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
+    box2.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
     body.style.background = `linear-gradient(to right, ${box2.style.backgroundColor}, ${box1.style.backgroundColor}`;
 
 }
@@ -37,3 +38,10 @@ function openSidebar (){
     
 }
 
+//Saving colors
+
+saveButton.addEventListener('click',save)
+
+function save(){
+    orderedList.appendChild = `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
+}
