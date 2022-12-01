@@ -43,5 +43,5 @@ function openSidebar (){
 saveButton.addEventListener('click',save)
 
 function save(){
-    orderedList.appendChild = `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
+    orderedList.innerHTML += `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
