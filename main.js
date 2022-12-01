@@ -8,12 +8,12 @@ let sidebarButton = document.querySelector('.sidebar-button')
 let sideContainer = document.querySelector('.sidecontainer')
 let orderedList = document.querySelector('.orderedList')
 
-// Functions
+// Utility Functions
 function random(number){
     return Math.floor(Math.random()*number)
 }
 
-//Generate color
+//Generate random color
 randomButton.addEventListener('click', randomColor)
 
 function randomColor () {
