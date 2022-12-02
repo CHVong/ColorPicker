@@ -8,6 +8,7 @@ let sidebarButton = document.querySelector('.sidebar-button')
 let sideContainer = document.querySelector('.sidecontainer')
 let savedBoxContainer = document.querySelector('.savedbox-container')
 let deleteButton = document.querySelector('.delete-all')
+let deleteOne = document.querySelector('.deletebox')
 
 // Utility Functions
 function random(number){ //generate random number +1 at end to include max param
@@ -100,7 +101,7 @@ function save(){
 }
 
 
-//Delete Button
+//Delete All Button
 
 deleteButton.addEventListener('click', deleteAll)
 
@@ -109,6 +110,27 @@ function deleteAll () {
         e.remove()
     })
 }
+
+
+//Delete one button
+//Event delegation needed. Use document.addEventListener instead of document.queryselector
+
+document.addEventListener('click', deleteOnce)
+
+function deleteOnce (e) {
+    if(e.target.className === 'deletebox' || e.target.className === 'fa-solid fa-trash-can') {
+        console.log('deleted')
+    }
+
+}
+
+// document.addEventListener('click', (e) => {
+//     if (e.target.className === ('deletebox')) {
+//       console.log('odd element clicked')
+//     }
+//   });
+
+   
 
 
 //To do

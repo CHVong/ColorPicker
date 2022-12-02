@@ -136,6 +136,13 @@ footer p a{
 
 .deletebox{
     height: 100%;
+    padding: 0 0.5rem;
+    transition: all .1s;
+}
+
+.deletebox:hover{
+    scale: 90%;
+    transition: all .1s;
 }
 
 .sidecontainer .delete-all{ /* need to include sidecontainer for specificity*/
