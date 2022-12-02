@@ -96,6 +96,7 @@ function save(){
         <div class="savedbox"></div>
         <div class="savedbox"></div>
     </div>`);
+
     }
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
@@ -119,28 +120,29 @@ document.addEventListener('click', deleteOnce)
 
 function deleteOnce (e) {
     if(e.target.className === 'deletebox' || e.target.className === 'fa-solid fa-trash-can') {
-        console.log('deleted')
+        // document.querySelector('.savedbox-container').style.opacity = '0'
+        document.querySelector('.savedbox-container').remove()
     }
-
 }
-
-// document.addEventListener('click', (e) => {
-//     if (e.target.className === ('deletebox')) {
-//       console.log('odd element clicked')
-//     }
-//   });
-
    
+//Event listeners for saved boxes
+document.addEventListener('click', savedBoxClicked)
+
+function savedBoxClicked (e) {
+    if(e.target.className === 'savedbox') {
+        console.log(document.querySelector('.savedbox'))
+    }
+}
 
 
 //To do
 
-//saved color list to have 2 boxes
+//saved colors box to have colors
 
 //saved colors box will generate background on click
-
-//delete button for saved colors list
 
 //local storage to persist saved colors
 
 //responsive design for sidebar width
+
+//Design fading effect on delete boxes
