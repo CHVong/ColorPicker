@@ -118,6 +118,22 @@ footer p a{
 }
 
 
+/* Saved boxes */
+.savedbox-container{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.5rem;
+}
+
+.savedbox{
+    width: 4vw;
+    height: 4vw;
+    background-color: black;
+    border-radius: 8px;
+    border: 2px solid black;
+    transition: all .15s;
+}
+
 /* Mobile responsiveness LIMITED RESPONSIVENESS FOR SIDEBAR TO WORK */
 
 @media screen and (max-width: 1500px) {
