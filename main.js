@@ -7,6 +7,7 @@ let body = document.querySelector('body');
 let sidebarButton = document.querySelector('.sidebar-button')
 let sideContainer = document.querySelector('.sidecontainer')
 let savedBoxContainer = document.querySelector('.savedbox-container')
+let deleteButton = document.querySelector('.delete-all')
 
 // Utility Functions
 function random(number){ //generate random number +1 at end to include max param
@@ -84,24 +85,29 @@ function copyColor(){
 saveButton.addEventListener('click', save)
 
 function save(){
-    
     if(document.querySelectorAll('.savedbox-container').length===5){
        alert(`TOO many colors saved! Delete a set to save again.`)
     }
-
-    //insertAdjacentHTML will make event listener persist. Do not use innerHTML to append otherwise eventlistener will not run.
+    //insertAdjacentHTML will make event listener persist. Do not use innerHTML to append otherwise eventlistener will not run. THIS or try appendChild
     if(document.querySelectorAll('.savedbox-container').length<5){
         sideContainer.insertAdjacentHTML("beforeend", `<div class="savedbox-container">
         <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
         <div class="savedbox"></div>
         <div class="savedbox"></div>
     </div>`);
-        
     }
-
-
-
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
+}
+
+
+//Delete Button
+
+deleteButton.addEventListener('click', deleteAll)
+
+function deleteAll () {
+    document.querySelectorAll('.savedbox-container').forEach(e=>{
+        e.remove()
+    })
 }
 
 
