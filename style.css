@@ -63,7 +63,7 @@ h1{
     justify-content: space-around;
 }
 button{
-    box-shadow:  0 0 0 2px black;
+    box-shadow:  0 0 2px 0.5px black;
     margin: 1rem;
     font-size: 1.25rem;
     width: 4rem;
@@ -76,7 +76,7 @@ button{
 }
 
 button:hover{
-    scale: 95%;
+    scale: 90%;
     transition: all .15s;
 }
 
@@ -85,7 +85,7 @@ button:hover{
 
 .sidecontainer{
     background:white;
-    padding: 1rem;
+    padding: 0.5rem;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255,0.3));
@@ -121,17 +121,31 @@ footer p a{
 /* Saved boxes */
 .savedbox-container{
     display: flex;
-    justify-content: space-evenly;
-    margin: 0.5rem;
+    justify-content: center;
 }
 
 .savedbox{
+    margin: 0.5rem;
     width: 4vw;
     height: 4vw;
     background-color: black;
     border-radius: 8px;
     border: 2px solid black;
     transition: all .15s;
+}
+
+.deletebox{
+    height: 100%;
+}
+
+.sidecontainer .delete-all{ /* need to include sidecontainer for specificity*/
+    position: absolute;
+    top: 90%; /*NEED TO REVISIT AND MAKE RESPONSIVE*/
+    left: 37%; /*HAVE TO WORK OUT THE BOX BORDERS WEIRD MATH*/
+    width: auto;
+    box-shadow:  0 0 2px 2px black;
+    font-size: 1rem;
+    margin: 0;
 }
 
 /* Mobile responsiveness LIMITED RESPONSIVENESS FOR SIDEBAR TO WORK */
