@@ -93,15 +93,17 @@ function save(){
     if(document.querySelectorAll('.savedbox-container').length<5){
         sideContainer.insertAdjacentHTML("beforeend", `<div class="savedbox-container">
         <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
-        <div class="savedbox" style="background-color: ${box1.style.backgroundColor}"></div>
-        <div class="savedbox" style="background-color: ${box2.style.backgroundColor}"></div>
+            <div class="smallboxcontainer">
+                <div class="savedbox" style="background-color: ${box1.style.backgroundColor}"></div>
+                <div class="savedbox" style="background-color: ${box2.style.backgroundColor}"></div>
+            </div>
         </div>`);
 
         document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
 
         setTimeout(function () {
             document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
-        }, 150);
+        }, 100);
     }
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
@@ -134,7 +136,7 @@ function deleteOnce () {
             this.parentNode.style.scale = '0%'
             setTimeout(function () {
                 el.parentNode.remove()
-            }, 175);
+            }, 150);
         })
     })
 }
