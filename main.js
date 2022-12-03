@@ -163,9 +163,13 @@ function savedBoxClicked (e) {
 
 //responsive design for sidebar width
 
+//No save limits turn on overflow y
+
 
 // DO AT THE END
 
 //Design fading effect on delete boxes
 
 // Prompt when you can't save anymore
+
+//Do not save if same color set
