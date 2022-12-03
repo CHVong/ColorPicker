@@ -95,8 +95,13 @@ function save(){
         <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
         <div class="savedbox" style="background-color: ${box1.style.backgroundColor}"></div>
         <div class="savedbox" style="background-color: ${box2.style.backgroundColor}"></div>
-    </div>`);
+        </div>`);
 
+        document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
+
+        setTimeout(function () {
+            document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
+        }, 150);
     }
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
@@ -112,7 +117,7 @@ function deleteAll () {
         e.style.scale = '0%'
         setTimeout(function () {
             e.remove()
-        }, 175);
+        }, 160);
     })
 }
 
