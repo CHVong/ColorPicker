@@ -122,6 +122,14 @@ footer p a{
 .savedbox-container{
     display: flex;
     justify-content: center;
+    transition: all .15s;
+}
+
+.savedbox-container:hover{
+    border-radius: 8px;
+    box-shadow:  0 0 1px 1px black;
+    scale: 98%;
+    transition: all .15s;
 }
 
 .savedbox{
