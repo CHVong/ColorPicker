@@ -119,7 +119,7 @@ function deleteAll () {
         e.style.scale = '0%'
         setTimeout(function () {
             e.remove()
-        }, 160);
+        }, 130);
     })
 }
 
