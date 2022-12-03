@@ -120,8 +120,14 @@ document.addEventListener('click', deleteOnce)
 
 function deleteOnce () {
     document.querySelectorAll('.deletebox').forEach(el=>{
-        el.addEventListener('click',function() {
-              this.parentNode.remove()
+        el.addEventListener('click',async function() {
+            this.parentNode.style.opacity = '0'
+            this.parentNode.style.scale = '0%'
+            console.log(this)
+            setTimeout(function () {
+                el.parentNode.remove()
+            }, 175);
+            // this.parentNode.remove()
         })
     })
 }
