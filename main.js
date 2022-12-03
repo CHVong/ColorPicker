@@ -108,7 +108,11 @@ deleteButton.addEventListener('click', deleteAll)
 
 function deleteAll () {
     document.querySelectorAll('.savedbox-container').forEach(e=>{
-        e.remove()
+        e.style.opacity = '0'
+        e.style.scale = '0%'
+        setTimeout(function () {
+            e.remove()
+        }, 175);
     })
 }
 
@@ -123,11 +127,9 @@ function deleteOnce () {
         el.addEventListener('click',async function() {
             this.parentNode.style.opacity = '0'
             this.parentNode.style.scale = '0%'
-            console.log(this)
             setTimeout(function () {
                 el.parentNode.remove()
             }, 175);
-            // this.parentNode.remove()
         })
     })
 }
