@@ -93,8 +93,8 @@ function save(){
     if(document.querySelectorAll('.savedbox-container').length<5){
         sideContainer.insertAdjacentHTML("beforeend", `<div class="savedbox-container">
         <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
-        <div class="savedbox"></div>
-        <div class="savedbox"></div>
+        <div class="savedbox" style="background-color: ${box1.style.backgroundColor}"></div>
+        <div class="savedbox" style="background-color: ${box2.style.backgroundColor}"></div>
     </div>`);
 
     }
@@ -118,12 +118,30 @@ function deleteAll () {
 
 document.addEventListener('click', deleteOnce)
 
-function deleteOnce (e) {
-    if(e.target.className === 'deletebox' || e.target.className === 'fa-solid fa-trash-can') {
-        // document.querySelector('.savedbox-container').style.opacity = '0'
-        document.querySelector('.savedbox-container').remove()
-    }
+function deleteOnce () {
+    document.querySelectorAll('.deletebox').forEach(el=>{
+        el.addEventListener('click',function() {
+              this.parentNode.remove()
+        })
+    })
 }
+    // if(e.target.className === 'deletebox' || e.target.className === 'fa-solid fa-trash-can') {
+        // document.querySelectorAll('.savedbox-container')
+        // document.querySelector('.savedbox-container').style.opacity = '0'
+        // Array.from(document.querySelectorAll('.savedbox-container')).forEach(elem=>{
+        //     console.log(elem)
+        // })
+        // document.querySelectorAll('.deletebox').forEach(el=>{
+        //     el.addEventListener(
+        //       'click',
+        //       function() {
+        //           this.parentNode.remove()
+        //     })
+        // })
+    // }
+
+
+
    
 //Event listeners for saved boxes
 document.addEventListener('click', savedBoxClicked)
@@ -145,4 +163,9 @@ function savedBoxClicked (e) {
 
 //responsive design for sidebar width
 
+
+// DO AT THE END
+
 //Design fading effect on delete boxes
+
+// Prompt when you can't save anymore
