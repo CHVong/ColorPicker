@@ -10,6 +10,10 @@ let savedBoxContainer = document.querySelector('.savedbox-container')
 let deleteButton = document.querySelector('.delete-all')
 let deleteOne = document.querySelector('.deletebox')
 
+//Local storage on load
+document.querySelector('.scrollcontainer').insertAdjacentHTML("beforeend", `${localStorage.getItem('mySavedColors')}`);
+
+
 // Utility Functions
 function random(number){ //generate random number +1 at end to include max param
     return Math.floor(Math.random()*(number+1))
@@ -105,6 +109,20 @@ function save(){
             document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
         }, 100);
     }
+    // Local storage save
+
+    if(!localStorage.getItem('mySavedColors')){
+        localStorage.setItem('mySavedColors', document.querySelector('.savedbox-container').outerHTML)
+    } else {
+        // let mySavedColors = localStorage.getItem('mySavedColors')
+        // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
+    }
+
+    
+    // console.log(document.querySelector('.savedbox-container'))
+    console.log(localStorage.getItem('mySavedColors'))
+    console.log(`${localStorage.getItem('mySavedColors')}`)
+
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
 
@@ -191,6 +209,6 @@ function savedBoxClicked() {
 
 // MAYBE WILL ADD OR WONT FEATURES. DO AT THE END
 
-// Prompt when you can't save anymore
+// Prompt when you can't save anymore?
 
-//Do not save if same color set
+//Do not save if same color set?
