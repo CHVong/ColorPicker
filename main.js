@@ -187,8 +187,6 @@ function savedBoxClicked() {
 
 //responsive design for sidebar width
 
-//No save limits turn on overflow y
-
 //requestAnimationFrame for saved box deletion
 
 // DO AT THE END
