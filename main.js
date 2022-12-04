@@ -86,12 +86,12 @@ function copyColor(){
 saveButton.addEventListener('click', save)
 
 function save(){
-    if(document.querySelectorAll('.savedbox-container').length===5){
-       alert(`TOO many colors saved! Delete a set to save again.`)
-    }
+    // if(document.querySelectorAll('.savedbox-container').length===5){
+    //    alert(`TOO many colors saved! Delete a set to save again.`)
+    // }
     //insertAdjacentHTML will make event listener persist. Do not use innerHTML to append otherwise eventlistener will not run. THIS or try appendChild
-    if(document.querySelectorAll('.savedbox-container').length<5){
-        sideContainer.insertAdjacentHTML("beforeend", `<div class="savedbox-container">
+    if(document.querySelectorAll('.savedbox-container')){ //.length<5 Restrict save amount
+        document.querySelector('.scrollcontainer').insertAdjacentHTML("beforeend", `<div class="savedbox-container">
         <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
             <div class="smallboxcontainer">
                 <div class="savedbox" style="background-color: ${box1.style.backgroundColor}"></div>
@@ -182,7 +182,6 @@ function savedBoxClicked() {
 
 //To do
 
-//saved colors box will generate background on click
 
 //local storage to persist saved colors
 
@@ -190,6 +189,7 @@ function savedBoxClicked() {
 
 //No save limits turn on overflow y
 
+//requestAnimationFrame for saved box deletion
 
 // DO AT THE END
 

@@ -120,6 +120,12 @@ footer p a{
 
 
 /* Saved boxes */
+.scrollcontainer{
+    overflow-y: scroll;
+    height: 80vh;
+    
+}
+
 .savedbox-container{
     display: flex;
     justify-content: center;
@@ -196,3 +202,31 @@ footer p a{
         left: -50%;
     }
   }
+
+/* saved box scroll bar styling for chrome */
+
+.scrollcontainer::-webkit-scrollbar {
+    width: 10px;
+  }
+.scrollcontainer::-webkit-scrollbar-track {
+    background: rgb(218, 218, 218);
+    border-radius: 10px;
+}
+.scrollcontainer::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136);
+    border-radius: 10px;
+}
+.scrollcontainer::-webkit-scrollbar-thumb:hover {
+    background: rgb(100, 100, 100);
+    border-radius: 10px;
+}
+.scrollcontainer::-webkit-scrollbar-thumb:active {
+    background: rgb(68, 68, 68);
+    border-radius: 10px;
+}
+
+/* saved box scroll bar styling for firefox */
+
+.scrollcontainer{
+    scrollbar-width: thin;
+}
