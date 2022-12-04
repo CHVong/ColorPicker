@@ -94,7 +94,7 @@ button:hover{
     height: 100%;
     width: 15vw;
     right: -15%;
-    transition: all .5s;
+    transition: all .4s;
 }
 .sidecontainer button{
     position: absolute;

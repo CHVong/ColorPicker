@@ -131,7 +131,7 @@ document.addEventListener('click', deleteOnce)
 
 function deleteOnce () {
     document.querySelectorAll('.deletebox').forEach(el=>{
-        el.addEventListener('click',async function() {
+        el.addEventListener('click', function() {
             this.parentNode.style.opacity = '0'
             this.parentNode.style.scale = '0%'
             setTimeout(function () {
@@ -161,16 +161,26 @@ function deleteOnce () {
 //Event listeners for saved boxes
 document.addEventListener('click', savedBoxClicked)
 
-function savedBoxClicked (e) {
-    if(e.target.className === 'savedbox') {
-        console.log(document.querySelector('.savedbox'))
-    }
+function savedBoxClicked() {
+    document.querySelectorAll('.smallboxcontainer').forEach(e=>{
+        e.addEventListener('click', function(){
+            box1.style.backgroundColor = `${this.firstElementChild.style.backgroundColor}`;
+
+            box2.style.backgroundColor = `${this.lastElementChild.style.backgroundColor}`;
+
+            body.style.background = `linear-gradient(to right, ${this.lastElementChild.style.backgroundColor}, ${this.firstElementChild.style.backgroundColor}`;
+        })
+    })
 }
+
+// function savedBoxClicked (e) {
+//     if(e.target.className === 'savedbox') {
+//         console.log(document.querySelector('.savedbox'))
+//     }
+// }
 
 
 //To do
-
-//saved colors box to have colors
 
 //saved colors box will generate background on click
 
@@ -182,8 +192,6 @@ function savedBoxClicked (e) {
 
 
 // DO AT THE END
-
-//Design fading effect on delete boxes
 
 // Prompt when you can't save anymore
 
