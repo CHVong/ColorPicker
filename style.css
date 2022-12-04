@@ -9,6 +9,7 @@ body{
     place-items: center;
     background-color: gray;
     overflow: hidden;
+    transition: all 0.75s;
 
 }
 .maincontainer{
@@ -156,6 +157,8 @@ footer p a{
 .smallboxcontainer:hover{
     scale: 90%;
     cursor: pointer;
+    background: #ddd;
+    border-radius: 8px;
     transition: all .25s;
 
 }
