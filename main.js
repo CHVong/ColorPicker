@@ -11,7 +11,11 @@ let deleteButton = document.querySelector('.delete-all')
 let deleteOne = document.querySelector('.deletebox')
 
 //Local storage on load
-document.querySelector('.scrollcontainer').insertAdjacentHTML("beforeend", `${localStorage.getItem('mySavedColors')}`);
+// document.querySelector('.scrollcontainer').insertAdjacentHTML("beforeend", `${localStorage.getItem('mySavedColors')}`);
+
+
+document.querySelector('.scrollcontainer').innerHTML =  localStorage.getItem('mySavedColors')
+
 
 
 // Utility Functions
@@ -103,11 +107,11 @@ function save(){
             </div>
         </div>`);
 
-        document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
+        // document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
 
-        setTimeout(function () {
-            document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
-        }, 100);
+        // setTimeout(function () {
+        //     document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
+        // }, 100);
     }
     // Local storage save
 
@@ -117,11 +121,16 @@ function save(){
         // let mySavedColors = localStorage.getItem('mySavedColors')
         // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
     }
+    document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
+
+        setTimeout(function () {
+            document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
+        }, 100); //Needs to be placed outside to get local storage to render visible
 
     
     // console.log(document.querySelector('.savedbox-container'))
-    console.log(localStorage.getItem('mySavedColors'))
-    console.log(`${localStorage.getItem('mySavedColors')}`)
+    console.log( localStorage.getItem('mySavedColors'))
+    console.log( `${localStorage.getItem('mySavedColors')}`)
 
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
