@@ -189,7 +189,7 @@ function savedBoxClicked() {
 
 //requestAnimationFrame for saved box deletion
 
-// DO AT THE END
+// MAYBE WILL ADD OR WONT FEATURES. DO AT THE END
 
 // Prompt when you can't save anymore
 
