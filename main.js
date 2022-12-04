@@ -147,6 +147,8 @@ function deleteAll () {
         setTimeout(function () {
             e.remove()
         }, 130);
+
+        localStorage.clear()
     })
 }
 
