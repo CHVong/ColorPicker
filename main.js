@@ -94,6 +94,10 @@ function copyColor(){
 saveButton.addEventListener('click', save)
 
 function save(){
+    if(sideContainer.style.right != '0%'){
+        sideContainer.style.right = '0%'
+        sidebarButton.innerHTML = `<i class="fa-solid fa-angles-right"></i>`
+    }
     // if(document.querySelectorAll('.savedbox-container').length===5){
     //    alert(`TOO many colors saved! Delete a set to save again.`)
     // }
@@ -117,10 +121,11 @@ function save(){
 
     if(!localStorage.getItem('mySavedColors')){
         localStorage.setItem('mySavedColors', document.querySelector('.savedbox-container').outerHTML)
-    } else {
+    } 
+    // else {
         // let mySavedColors = localStorage.getItem('mySavedColors')
         // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
-    }
+    // }
     document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
 
         setTimeout(function () {
@@ -129,8 +134,13 @@ function save(){
 
     
     // console.log(document.querySelector('.savedbox-container'))
-    console.log( localStorage.getItem('mySavedColors'))
-    console.log( `${localStorage.getItem('mySavedColors')}`)
+    // console.log( localStorage.getItem('mySavedColors'))
+    // console.log( `${localStorage.getItem('mySavedColors')}`)
+
+
+    //Check if sidebar is open
+
+    
 
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
