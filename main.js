@@ -231,8 +231,6 @@ function savedBoxClicked() {
 
 //responsive design for sidebar width
 
-//requestAnimationFrame for saved box deletion
-
 // MAYBE WILL ADD OR WONT FEATURES. DO AT THE END
 
 // Prompt when you can't save anymore?
