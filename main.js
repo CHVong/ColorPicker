@@ -94,6 +94,7 @@ function copyColor(){
 saveButton.addEventListener('click', save)
 
 function save(){
+    //Check if sidebar is open
     if(sideContainer.style.right != '0%'){
         sideContainer.style.right = '0%'
         sidebarButton.innerHTML = `<i class="fa-solid fa-angles-right"></i>`
@@ -117,15 +118,7 @@ function save(){
         //     document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
         // }, 100);
     }
-    // Local storage save
-
-    if(!localStorage.getItem('mySavedColors')){
-        localStorage.setItem('mySavedColors', document.querySelector('.savedbox-container').outerHTML)
-    } 
-    // else {
-        // let mySavedColors = localStorage.getItem('mySavedColors')
-        // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
-    // }
+ 
     document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
 
         setTimeout(function () {
@@ -138,9 +131,25 @@ function save(){
     // console.log( `${localStorage.getItem('mySavedColors')}`)
 
 
-    //Check if sidebar is open
-
     
+
+       // Local storage save
+
+    if(!localStorage.getItem('mySavedColors')){
+        localStorage.setItem('mySavedColors', document.querySelector('.savedbox-container').outerHTML)
+    } else {
+        let mySavedColors = localStorage.getItem('mySavedColors')
+
+        localStorage.setItem('mySavedColors', document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1])
+        // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
+    }
+
+    console.log(localStorage.getItem('mySavedColors'))
+    console.log(document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1])
+    // else {
+        // let mySavedColors = localStorage.getItem('mySavedColors')
+        // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
+    // }
 
 // `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
 }
