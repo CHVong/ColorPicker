@@ -161,11 +161,26 @@ document.addEventListener('click', deleteOnce)
 function deleteOnce () {
     document.querySelectorAll('.deletebox').forEach(el=>{
         el.addEventListener('click', function() {
-            this.parentNode.style.opacity = '0'
+            
             this.parentNode.style.scale = '0%'
+            this.parentNode.style.transition = 'all 0.5s'
+            this.parentNode.style.opacity = '0'
+            this.parentNode.style.height = '0'
+            
+            
+
+            // setTimeout(function () {
+            //     // el.parentNode.style.opacity = '0'
+                
+            //     el.parentNode.style.height = '0'
+            //     // el.parentNode.style.display = 'none'
+            //     console.log('hi')
+            // }, 0);
+
             setTimeout(function () {
                 el.parentNode.remove()
-            }, 150);
+                console.log('hello')
+            }, 500);
         })
     })
 }
