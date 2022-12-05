@@ -246,3 +246,5 @@ function savedBoxClicked() {
 // Prompt when you can't save anymore?
 
 //Do not save if same color set?
+
+// Maybe disable open sidebar when saved? More controls
