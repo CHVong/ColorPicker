@@ -232,8 +232,19 @@ function savedBoxClicked() {
             box2.style.backgroundColor = `${this.lastElementChild.style.backgroundColor}`;
 
             body.style.background = `linear-gradient(to right, ${this.lastElementChild.style.backgroundColor}, ${this.firstElementChild.style.backgroundColor}`;
+
+            e.style.scale = '80%'
+
+    //delayed functions to add animations to copied after click
+
+            setTimeout(function () {
+                e.style.removeProperty('scale')
+            }, 100);
         })
+        
     })
+    
+
 }
 
 // function savedBoxClicked (e) {
