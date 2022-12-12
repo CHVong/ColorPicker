@@ -181,12 +181,12 @@ function deleteOnce () {
     document.querySelectorAll('.deletebox').forEach(el=>{
         el.addEventListener('click', function() {
             
-            this.parentNode.style.scale = '0%'
-            this.parentNode.style.transition = 'all 0.5s'
-            this.parentNode.style.opacity = '0'
-            this.parentNode.style.height = '0'
+            // this.parentNode.style.scale = '0%'
+            // this.parentNode.style.transition = 'all 0.5s'
+            // this.parentNode.style.opacity = '0'
+            // this.parentNode.style.height = '0'
             
-            
+            this.parentNode.classList.add('deleting')
 
             // setTimeout(function () {
             //     // el.parentNode.style.opacity = '0'
@@ -199,7 +199,7 @@ function deleteOnce () {
             setTimeout(function () {
                 el.parentNode.remove()
                 console.log('hello')
-            }, 500);
+            }, 350);
         })
     })
 }

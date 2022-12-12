@@ -52,12 +52,6 @@ h1{
     transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-.show{
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.1s linear;
-}
-
 .buttoncontainer{
     display: flex;
     flex-direction: row;
@@ -80,6 +74,22 @@ button:hover{
     scale: 95%;
     transition: all .15s;
     cursor: pointer;
+}
+
+
+/* JS event styling */
+
+.show{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.1s linear;
+}
+
+.sidecontainer .scrollcontainer .deleting{ /*NEED SPECIFICITY FOR BEFORE INSERT FOR TRANSITION TO TAKE PLACE*/
+    scale: 0%;
+    opacity: 0;
+    max-height: 0px;
+    transition: all 0.35s;
 }
 
 
@@ -131,6 +141,7 @@ footer p a{
     display: flex;
     justify-content: center;
     transition: all .25s;
+    max-height: 1000px; /*NEED BIG RANDOM NUM FOR HEIGHT TO SET TRANSITION*/
 }
 
 .savedbox-container:hover{
@@ -233,3 +244,4 @@ footer p a{
 .scrollcontainer{
     scrollbar-width: thin;
 }
+
