@@ -267,4 +267,4 @@ function savedBoxClicked() {
 
 //Do not save if same color set?
 
-// Maybe disable open sidebar when saved? More controls
+// Maybe disable open sidebar after first save? More controls
