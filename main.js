@@ -134,15 +134,18 @@ function save(){
     
 
        // Local storage save
-        
-    if(!localStorage.getItem('mySavedColors')){
-        localStorage.setItem('mySavedColors', document.querySelector('.savedbox-container').outerHTML)
-    } else {
-        let mySavedColors = localStorage.getItem('mySavedColors')
+    setTimeout(function(){
+        if(!localStorage.getItem('mySavedColors')){
+            localStorage.setItem('mySavedColors', document.querySelector('.savedbox-container').outerHTML)
+        } else {
+            let mySavedColors = localStorage.getItem('mySavedColors')
+    
+            localStorage.setItem('mySavedColors', mySavedColors + document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].outerHTML)
+            // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
+        }
+    },101)
 
-        localStorage.setItem('mySavedColors', mySavedColors + document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].outerHTML)
-        // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
-    }
+    
 
     console.log(localStorage.getItem('mySavedColors'))
     console.log(document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1])
