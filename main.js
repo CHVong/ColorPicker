@@ -274,7 +274,6 @@ function savedBoxClicked() {
 //To do
 
 
-//local storage to persist saved colors
 
 //responsive design for sidebar width
 
