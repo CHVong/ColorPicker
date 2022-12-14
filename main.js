@@ -147,8 +147,10 @@ function save(){
 
     
 
-    console.log(localStorage.getItem('mySavedColors'))
-    console.log(document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1])
+    // console.log(localStorage.getItem('mySavedColors'))
+    // console.log(document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1])
+
+
     // else {
         // let mySavedColors = localStorage.getItem('mySavedColors')
         // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
@@ -188,7 +190,12 @@ function deleteOnce () {
             // this.parentNode.style.transition = 'all 0.5s'
             // this.parentNode.style.opacity = '0'
             // this.parentNode.style.height = '0'
-            
+            // put local storage before adding class
+            localStorage.setItem('mySavedColors', `${localStorage.getItem('mySavedColors').replace(this.parentNode.outerHTML,'')}`)
+            console.log(this.parentNode.outerHTML)
+            console.log(localStorage.getItem('mySavedColors'))
+
+
             this.parentNode.classList.add('deleting')
 
             // setTimeout(function () {
@@ -199,11 +206,18 @@ function deleteOnce () {
             //     console.log('hi')
             // }, 0);
 
+            // localStorage.getItem('mySavedColors').includes(el.outerHTML)?
+            
+
+
             setTimeout(function () {
                 el.parentNode.remove()
                 console.log('hello')
             }, 350);
         })
+
+        
+
     })
 }
     // if(e.target.className === 'deletebox' || e.target.className === 'fa-solid fa-trash-can') {
