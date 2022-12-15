@@ -181,7 +181,7 @@ function deleteOnce () {
             // Remove div
             setTimeout(function () {
                 el.parentNode.remove()
-                console.log('hello')
+                // console.log('hello')
             }, 350);
         })
     })
