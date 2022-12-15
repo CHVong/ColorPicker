@@ -132,7 +132,7 @@ footer p a{
 
 /* Saved boxes */
 .scrollcontainer{
-    overflow-y: overlay;
+    overflow-y: overlay; /*Does not work for firefox*/
     height: 80vh;
     overflow-x: hidden;
 }

@@ -13,7 +13,7 @@ let deleteOne = document.querySelector('.deletebox')
 //Local storage on load
 document.querySelector('.scrollcontainer').innerHTML = localStorage.getItem('mySavedColors')
 
-// Utility Functions
+//Utility Functions
 function random(number){ //generate random number; +1 at end to include param
     return Math.floor(Math.random()*(number+1))
 }
@@ -53,23 +53,25 @@ function openSidebar (){
     }
 }
 
-//Copying color on click and generate full page background color change
-
+//Copy color on click and change color to full page background view
 box1.addEventListener('click', copyColor)
 box2.addEventListener('click', copyColor)
 
 function copyColor(){
-    let clickedBox = event.target.id  //grab from click event box1 or box2 id
+    //Event is marked as deprecated. Change to include event as our parameter? "Reason- It's missing the event parameter in the event handler function. It ends up using the global window.event which is fragile and is deprecated."
+    let clickedBox = event.target.id  //Assign the event from either box1 or box2 after click
 
-    navigator.clipboard.writeText(document.querySelector(`.${clickedBox}`).style.backgroundColor) //code to copy the rgba color
+    navigator.clipboard.writeText(document.querySelector(`.${clickedBox}`).style.backgroundColor) //This code will copy the rgba color to clipboard
 
-    body.style.background = document.querySelector(`.${clickedBox}`).style.backgroundColor;
+    body.style.background = document.querySelector(`.${clickedBox}`).style.backgroundColor; //Feature to change background color after copy
 
+    //Animation
     document.querySelector(`.${clickedBox}`).style.scale = '90%'
+
+    //First element child will be the p tag
     document.querySelector(`.${clickedBox}`).firstElementChild.classList.add('show')
 
-    //delayed functions to add animations to copied after click
-
+    //Delayed functions to add animations to box after clicking copy
     setTimeout(function () {
         document.querySelector(`.${clickedBox}`).style.scale = '100%'
     }, 150);
@@ -80,50 +82,42 @@ function copyColor(){
 }
 
 //Saving colors
-
 saveButton.addEventListener('click', save)
 
 function save(){
     //Check if sidebar is open
+    //Feature for opening sidebar after clicking save
     if(sideContainer.style.right != '0%'){
         sideContainer.style.right = '0%'
         sidebarButton.innerHTML = `<i class="fa-solid fa-angles-right"></i>`
     }
+
+    // THIS CODEBLOCK IS TO LIMIT THE NUMBER OF SAVES. CURRENTLY SET TO 5.
+    //.length restrict save amount
     // if(document.querySelectorAll('.savedbox-container').length===5){
     //    alert(`TOO many colors saved! Delete a set to save again.`)
     // }
+
     //insertAdjacentHTML will make event listener persist. Do not use innerHTML to append otherwise eventlistener will not run. THIS or try appendChild
-    if(document.querySelectorAll('.savedbox-container')){ //.length<5 Restrict save amount
+    if(document.querySelectorAll('.savedbox-container')){ 
         document.querySelector('.scrollcontainer').insertAdjacentHTML("beforeend", `<div class="savedbox-container">
-        <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
+            <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
             <div class="smallboxcontainer">
                 <div class="savedbox" style="background-color: ${box1.style.backgroundColor}"></div>
                 <div class="savedbox" style="background-color: ${box2.style.backgroundColor}"></div>
             </div>
         </div>`);
-
-        // document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
-
-        // setTimeout(function () {
-        //     document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
-        // }, 100);
+        // Code block to add small saved boxes to sidebar
     }
  
     document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '0'
 
-        setTimeout(function () {
-            document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
-        }, 100); //Needs to be placed outside to get local storage to render visible
+    //Needs to be placed outside of localstorage function to get page to render visible when loaded.
+    setTimeout(function () {
+        document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].style.opacity = '1'
+    }, 100); 
 
-    
-    // console.log(document.querySelector('.savedbox-container'))
-    // console.log( localStorage.getItem('mySavedColors'))
-    // console.log( `${localStorage.getItem('mySavedColors')}`)
-
-
-    
-
-       // Local storage save
+    //Local storage save
     setTimeout(function(){
         if(!localStorage.getItem('mySavedColors')){
             localStorage.setItem('mySavedColors', document.querySelector('.savedbox-container').outerHTML)
@@ -131,27 +125,14 @@ function save(){
             let mySavedColors = localStorage.getItem('mySavedColors')
     
             localStorage.setItem('mySavedColors', mySavedColors + document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1].outerHTML)
-            // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
         }
-    },101)
+    },101) //time just needs to be longer than opacity function
 
-    
-
-    // console.log(localStorage.getItem('mySavedColors'))
-    // console.log(document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1])
-
-
-    // else {
-        // let mySavedColors = localStorage.getItem('mySavedColors')
-        // localStorage.setItem('mySavedColors',document.querySelector('.savedbox-container'))
-    // }
-
-// `<li>${box1.style.backgroundColor} ${box2.style.backgroundColor}</li>`
+    //console.log(document.querySelectorAll('.savedbox-container')[document.querySelectorAll('.savedbox-container').length-1])
 }
 
 
 //Delete All Button
-
 deleteButton.addEventListener('click', deleteAll)
 
 function deleteAll () {
@@ -167,68 +148,46 @@ function deleteAll () {
 }
 
 
-//Delete one button
+//Delete once button
 //Event delegation needed. Use document.addEventListener instead of document.queryselector
-
+//Bypass looping and adding event listener to each trash can button
+//Bug that happened was having to click on trashcan twice. Once to add an eventlistener and once more to actually run the code.
 document.addEventListener('click', deleteOnce)
 
 function deleteOnce () {
     document.querySelectorAll('.deletebox').forEach(el=>{
         el.addEventListener('click', function() {
-            
             // this.parentNode.style.scale = '0%'
             // this.parentNode.style.transition = 'all 0.5s'
             // this.parentNode.style.opacity = '0'
             // this.parentNode.style.height = '0'
-            // put local storage before adding class
+
+            // Update local storage before adding class
             localStorage.setItem('mySavedColors', `${localStorage.getItem('mySavedColors').replace(this.parentNode.outerHTML,'')}`)
-            console.log(this.parentNode.outerHTML)
-            console.log(localStorage.getItem('mySavedColors'))
 
+            // console.log(this.parentNode.outerHTML)
+            // console.log(localStorage.getItem('mySavedColors'))
 
+            // Add deleting class to trigger animation
             this.parentNode.classList.add('deleting')
 
             // setTimeout(function () {
-            //     // el.parentNode.style.opacity = '0'
-                
-            //     el.parentNode.style.height = '0'
-            //     // el.parentNode.style.display = 'none'
-            //     console.log('hi')
+                // el.parentNode.style.opacity = '0'
+                // el.parentNode.style.height = '0'
+                // el.parentNode.style.display = 'none'
+                // console.log('hi')
             // }, 0);
 
-            // localStorage.getItem('mySavedColors').includes(el.outerHTML)?
-            
-
-
+            // Remove div
             setTimeout(function () {
                 el.parentNode.remove()
                 console.log('hello')
             }, 350);
         })
-
-        
-
     })
 }
-    // if(e.target.className === 'deletebox' || e.target.className === 'fa-solid fa-trash-can') {
-        // document.querySelectorAll('.savedbox-container')
-        // document.querySelector('.savedbox-container').style.opacity = '0'
-        // Array.from(document.querySelectorAll('.savedbox-container')).forEach(elem=>{
-        //     console.log(elem)
-        // })
-        // document.querySelectorAll('.deletebox').forEach(el=>{
-        //     el.addEventListener(
-        //       'click',
-        //       function() {
-        //           this.parentNode.remove()
-        //     })
-        // })
-    // }
-
-
-
    
-//Event listeners for saved boxes
+//Event listener for clicking on saved boxes.
 document.addEventListener('click', savedBoxClicked)
 
 function savedBoxClicked() {
@@ -240,37 +199,20 @@ function savedBoxClicked() {
 
             body.style.background = `linear-gradient(to right, ${this.lastElementChild.style.backgroundColor}, ${this.firstElementChild.style.backgroundColor}`;
 
-            e.style.scale = '80%'
+            e.style.scale = '80%' //Scale set smaller than to hover
 
-    //delayed functions to add animations to copied after click
-
+            //delayed function to add animation to saved box set after click
             setTimeout(function () {
                 e.style.removeProperty('scale')
             }, 100);
         })
-        
     })
-    
-
 }
-
-// function savedBoxClicked (e) {
-//     if(e.target.className === 'savedbox') {
-//         console.log(document.querySelector('.savedbox'))
-//     }
-// }
-
 
 //To do
 
-
-
 //responsive design for sidebar width
-
 // MAYBE WILL ADD OR WONT FEATURES. DO AT THE END
-
 // Prompt when you can't save anymore?
-
 //Do not save if same color set?
-
 // Maybe disable open sidebar after first save? More controlsg
