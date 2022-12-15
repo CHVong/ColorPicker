@@ -210,9 +210,10 @@ function savedBoxClicked() {
 }
 
 //To do
-
 //responsive design for sidebar width
-// MAYBE WILL ADD OR WONT FEATURES. DO AT THE END
+//UI changes
+
+// OPTIONAL FEATURES. DO AT THE END
 // Prompt when you can't save anymore?
-//Do not save if same color set?
-// Maybe disable open sidebar after first save? More controlsg
+// Do not save if same color set?
+// Maybe disable open sidebar after first save? More controls
