@@ -11,48 +11,39 @@ let deleteButton = document.querySelector('.delete-all')
 let deleteOne = document.querySelector('.deletebox')
 
 //Local storage on load
-// document.querySelector('.scrollcontainer').insertAdjacentHTML("beforeend", `${localStorage.getItem('mySavedColors')}`);
-
-
-document.querySelector('.scrollcontainer').innerHTML =  localStorage.getItem('mySavedColors')
-
-
+document.querySelector('.scrollcontainer').innerHTML = localStorage.getItem('mySavedColors')
 
 // Utility Functions
-function random(number){ //generate random number +1 at end to include max param
+function random(number){ //generate random number; +1 at end to include param
     return Math.floor(Math.random()*(number+1))
 }
 
-//Generate random color
+//Click to generate random color
 randomButton.addEventListener('click', randomColor)
 
 function randomColor () {
-    //generate 2 random rgba for 2 boxes
-    box1.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
-
-    box2.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
-    //split the middle with gradient
-    body.style.background = `linear-gradient(to right, ${box2.style.backgroundColor}, ${box1.style.backgroundColor}`;
-
-}
-
-// Generate random color on page load
-
-function loadRandomColor(){
+    //generate 2 random rgba for 2 boxes, rounded alpha for copy pasting
     box1.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
 
     box2.style.backgroundColor = `rgba(${random(255)},${random(255)},${random(255)}, ${Math.random().toFixed(2)})`;
 
+    //split the middle with gradient on opposite sides
     body.style.background = `linear-gradient(to right, ${box2.style.backgroundColor}, ${box1.style.backgroundColor}`;
+
 }
 
+//Generate random color on initial page load
 window.addEventListener('load', (loadRandomColor))
 
-//Open sidebar
+function loadRandomColor(){
+    randomColor()
+}
 
+//Open sidebar
 sidebarButton.addEventListener('click', openSidebar)
 
-function openSidebar (){ //show/hide and changes different icon for sidebar
+function openSidebar (){
+    //Toggle show & hide icon for sidebar opening/closing
     if(sideContainer.style.right != '0%'){
         sideContainer.style.right = '0%'
         sidebarButton.innerHTML = `<i class="fa-solid fa-angles-right"></i>`
@@ -60,7 +51,6 @@ function openSidebar (){ //show/hide and changes different icon for sidebar
         sideContainer.style.right = '-15%'
         sidebarButton.innerHTML = `<i class="fa-solid fa-angles-left"></i>`
     }
-
 }
 
 //Copying color on click and generate full page background color change
@@ -283,4 +273,4 @@ function savedBoxClicked() {
 
 //Do not save if same color set?
 
-// Maybe disable open sidebar after first save? More controls
+// Maybe disable open sidebar after first save? More controlsg
