@@ -102,7 +102,7 @@ function save(){
     if(document.querySelectorAll('.savedbox-container')){ 
         document.querySelector('.scrollcontainer').insertAdjacentHTML("beforeend", `<div class="savedbox-container">
             <div class="deletebox"><i class="fa-solid fa-trash-can"></i></div>
-            <div class="smallboxcontainer">
+            <div class="smallboxcontainer" style="">
                 <div class="savedbox" style="background-color: ${box1.style.backgroundColor}"></div>
                 <div class="savedbox" style="background-color: ${box2.style.backgroundColor}"></div>
             </div>
@@ -163,8 +163,10 @@ function deleteOnce () {
             // this.parentNode.style.height = '0'
 
             // Update local storage before adding class
-            localStorage.setItem('mySavedColors', `${localStorage.getItem('mySavedColors').replace(this.parentNode.outerHTML,'')}`)
+            // console.log(this.parentNode.outerHTML)
 
+            localStorage.setItem('mySavedColors', `${localStorage.getItem('mySavedColors').replace(this.parentNode.outerHTML,'')}`)
+            
             // console.log(this.parentNode.outerHTML)
             // console.log(localStorage.getItem('mySavedColors'))
 
