@@ -212,18 +212,70 @@ footer p a{
 
 /* Mobile responsiveness LIMITED RESPONSIVENESS FOR SIDEBAR TO WORK */
 
+@media screen and (max-width: 2000px) {
+    .sidecontainer button{
+        left: -26%;
+    }
+  }
+
 @media screen and (max-width: 1500px) {
     .sidecontainer button{
-        left: -30%;
+        left: -36%;
+    }
+    .deletebox{
+        font-size: 14px;
+    }
+    .maincontainer{
+        max-width: 35vmax;
+    }
+    .box{
+        width: 12vmax;
+        height: 11vmax;
     }
   }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1100px) {
     .sidecontainer button{
-        left: -40%;
+        left: -41%;
+    }
+    .deletebox{
+        font-size: 10px;
+    }
+    .sidecontainer{
+        padding: 0rem;
+    }
+    .sidecontainer h1{
+        font-size: 1rem;
+    }
+    .sidecontainer .delete-all{
+        left: 27%;
+        font-size: 0.8rem;
+    }
+    .maincontainer{
+        max-width: 40vmax;
+    }
+    /* .savedbox-container{
+        justify-content: flex-start;
+    } */
+    button{
+        width: 3rem;
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+    .box{
+        width: 15vmax;
+        height: 12vmax;
+    }
+    .savedbox{
+        border: 1px solid black;
+        margin: .25rem;
     }
   }
-
+@media screen and (max-width: 900px) {
+    .sidecontainer button{
+        left: -47%;
+    }
+  }
 @media screen and (max-width: 500px) {
     .sidecontainer button{
         left: -50%;
