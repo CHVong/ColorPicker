@@ -2,6 +2,9 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+html{
+    height: -webkit-fill-available;
+}
 body{
     margin: 0;
     height:100vh;
