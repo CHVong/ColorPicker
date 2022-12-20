@@ -13,7 +13,7 @@ body{
     background-color: gray;
     overflow: hidden;
     transition: all 0.75s;
-
+    height: -webkit-fill-available;
 }
 .maincontainer{
     background:white;
