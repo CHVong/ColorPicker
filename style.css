@@ -112,6 +112,7 @@ button:hover{
     width: 15vw;
     right: -15%;
     transition: all .4s;
+    height: -webkit-fill-available;
 }
 .sidecontainer button{
     position: absolute;
