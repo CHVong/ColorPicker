@@ -62,7 +62,7 @@ h1{
     justify-content: space-around;
 }
 button{
-    box-shadow:  0 0 2px 0.5px black;
+    box-shadow:  0 0 2px 0.5px gray;
     margin: 1rem;
     font-size: 1.25rem;
     width: 4rem;
@@ -118,14 +118,14 @@ button:hover{
     position: absolute;
     top: 50%;
     left: -20%;
-    box-shadow:  0 0 2px 2px black;
+    box-shadow:  0 0 2px 1px gray;
 }
 .sidecontainer h1{
     font-size: 1.25rem;
     text-align: center;
     padding: 0.5rem;
     border-bottom: 1px solid black;
-    border-image: linear-gradient(to right, transparent 10%, black 50%, transparent 90%) 100% 0 100% 0/0 0 2.5px 0 stretch; 
+    border-image: linear-gradient(to right, transparent 10%, gray 50%, transparent 90%) 100% 0 100% 0/0 0 2.5px 0 stretch; 
     /* text-decoration: underline; */
 }
 
@@ -202,7 +202,7 @@ footer p a{
     top: 90%; /*NEED TO REVISIT AND MAKE RESPONSIVE*/
     left: 37%; /*HAVE TO WORK OUT THE BOX BORDERS WEIRD MATH*/
     width: auto;
-    box-shadow:  0 0 2px 2px black;
+    box-shadow:  0 0 2px 1px gray;
     font-size: 1rem;
     margin: 0;
     transition: all 0.3s;
