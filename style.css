@@ -2,9 +2,6 @@
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
-html{
-    height: -webkit-fill-available;
-}
 body{
     margin: 0;
     height:100vh;
@@ -13,11 +10,11 @@ body{
     background-color: gray;
     overflow: hidden;
     transition: all 0.75s;
-    height: -webkit-fill-available;
 }
 html, body{
     overflow-x: hidden;
     max-width: 100%;
+    height: -webkit-fill-available;
 }
 .maincontainer{
     background:white;
@@ -277,6 +274,9 @@ footer p a{
         border: 1px solid black;
         margin: .25rem;
     }
+    footer{
+        font-size: 0.5rem;
+    }
   }
 @media screen and (max-width: 900px) {
     .sidecontainer button{
@@ -286,6 +286,37 @@ footer p a{
 @media screen and (max-width: 500px) {
     .sidecontainer button{
         left: -50%;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    .sidecontainer h1{
+        font-size: 0.6rem;
+    }
+    .savedbox{
+        margin: 0.05rem;
+        margin-bottom: 0.5rem;
+        border-radius: 5px;
+    }
+    button{
+        border-radius: 6px;
+        margin: 0.5rem;
+    }
+    .sidecontainer .delete-all{
+        width: min-content;
+        left: 10%;
+        padding: 0.2rem;
+    }
+    .maincontainer{
+        max-width: 30vmax;
+    }
+    .box{
+        width: 10vmax;
+        height: 9vmax;
+        margin: 1rem;
+    }
+    .sidecontainer button{
+        left: -80%;
     }
   }
 
