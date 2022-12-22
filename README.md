@@ -31,11 +31,11 @@ https://brunchwithyou.github.io/ColorPicker/
 - Consider replacing the use of transition in css for animation
 
 
-## Noteworthy Discoveries from Bugs
+## Noteworthy Discoveries & Bugs Encountered
 - Event listener is lost when using innerHTML to append a saved color set to the DOM, make use of insertAdjacentHTML instead
 - Event delegation needed for looping. Bug that happened was having to click on trashcan twice. Once to add an eventlistener and once more to actually run the code.
 - CSS height property does not translate well when trying to use transition after a DOM removal. Use max-height instead.
-- Removing an inline style from the dom will result in `style=""` instead of getting rid of the styling completely.
+- Removing an inline style from the dom will result in `style=""` instead of getting rid of the declaration completely.
 
 
 ## Authors
