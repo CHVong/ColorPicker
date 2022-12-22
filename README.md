@@ -7,6 +7,7 @@ A website to quickly randomize a pair of color scheme.
 ## Demo
 
 https://brunchwithyou.github.io/ColorPicker/
+![icons8-crayon-96](https://user-images.githubusercontent.com/84001929/209029364-d27b9cde-64fb-444d-a767-21789058fcca.png)
 
 
 ## Features
@@ -14,7 +15,7 @@ https://brunchwithyou.github.io/ColorPicker/
 - Randomize color sets with rgba values
 - Local storage persistence
 - Save and delete your color sets
-- Copying values to clipboard onclick
+- Copy values to clipboard onclick
 - Side-by-side and fullscreen view
 
 
