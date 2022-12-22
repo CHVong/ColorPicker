@@ -14,7 +14,7 @@ https://brunchwithyou.github.io/ColorPicker/
 ## Features
 
 - Randomize color sets with rgba values
-- Local storage persistence
+- Persistent local storage
 - Save and delete your color sets
 - Copy values to clipboard onclick
 - Side-by-side and fullscreen view
