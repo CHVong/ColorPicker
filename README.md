@@ -7,7 +7,8 @@ A website to quickly randomize a pair of color scheme.
 ## Demo
 ![faviconIcon](https://user-images.githubusercontent.com/84001929/209029493-b71ceffb-c97b-468c-bf5a-19792b355784.png)
 https://brunchwithyou.github.io/ColorPicker/
-![ColorPickerDemo2](https://user-images.githubusercontent.com/84001929/209036205-8d580537-84c2-47d1-81aa-94ecd3233358.gif)
+
+![ColorPickerDemo3](https://user-images.githubusercontent.com/84001929/209036713-79d64c15-c814-4ca0-809f-58d072a42f71.gif)
 
 
 ## Features
