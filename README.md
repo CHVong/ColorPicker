@@ -1,7 +1,7 @@
 
 # Color Picker
 
-A website to quickly randomize a pair of color scheme created with HTML, CSS, and JavaScript.
+A website to quickly generate a randomized pair of color schemes created using HTML, CSS, and JavaScript.
 
 
 ## Demo
