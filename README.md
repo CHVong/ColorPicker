@@ -30,6 +30,13 @@ https://brunchwithyou.github.io/ColorPicker/
 - Revisit implementation of loops to optimize event listeners
 - Consider replacing the use of transition in css for animation
 
+
+## Noteworthy Discoveries from Bugs
+- Event listener is lost when using innerHTML to append a saved color set to the DOM, make use of insertAdjacentHTML instead
+- Event delegation needed for looping. Bug that happened was having to click on trashcan twice. Once to add an eventlistener and once more to actually run the code.
+- CSS height property does not translate well when trying to use transition after a DOM removal. Use max-height instead.
+
+
 ## Authors
 
 - [@BrunchWithYou](https://www.github.com/BrunchWithYou)
