@@ -1,7 +1,9 @@
 
 # Color Picker
 
-A web page to quickly generate a pair of randomized color sets created using HTML, CSS, and JavaScript.
+A web page to quickly generate a pair of randomized color sets.
+
+Created with HTML, CSS, and JavaScript.
 
 
 ## Demo
