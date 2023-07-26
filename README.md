@@ -40,12 +40,4 @@ https://brunchwithyou.github.io/ColorPicker/
 - Removing an inline style from the DOM will result in `style=""` instead of getting rid of the declaration completely.
 
 
-## Authors
-
-- [@BrunchWithYou](https://www.github.com/BrunchWithYou)
-
-
-## Feedback
-
-If you have any feedback, feel free to open a new issue here https://github.com/BrunchWithYou/ColorPicker/issues
 
