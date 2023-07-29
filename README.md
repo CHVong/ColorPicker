@@ -10,7 +10,7 @@ Created with HTML, CSS, and JavaScript.
 ![faviconIcon](https://user-images.githubusercontent.com/84001929/209029493-b71ceffb-c97b-468c-bf5a-19792b355784.png)
 https://brunchwithyou.github.io/ColorPicker/
 
-![ColorPickerDemo3](https://github.com/BrunchWithYou/ColorPicker/assets/84001929/448639a0-fa64-4c8e-8de5-c1abdd30c6af)
+![ColorPickerDemo3](https://github.com/BrunchWithYou/ColorPicker/assets/84001929/207ed9c0-56e5-4fed-b08a-aa2d15fb510f)
 
 
 ## Features
