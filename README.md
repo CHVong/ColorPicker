@@ -1,17 +1,15 @@
-
 # Color Picker
 
 A web page to quickly generate a pair of randomized color sets.
 
 Created with HTML, CSS, and JavaScript.
 
-
 ## Demo
+
 ![faviconIcon](https://user-images.githubusercontent.com/84001929/209029493-b71ceffb-c97b-468c-bf5a-19792b355784.png)
-https://brunchwithyou.github.io/ColorPicker/
+https://CHVong.github.io/ColorPicker/
 
-![ColorPickerDemo3](https://github.com/BrunchWithYou/ColorPicker/assets/84001929/207ed9c0-56e5-4fed-b08a-aa2d15fb510f)
-
+![ColorPickerDemo3](https://github-production-user-asset-6210df.s3.amazonaws.com/84001929/256969724-207ed9c0-56e5-4fed-b08a-aa2d15fb510f.gif)
 
 ## Features
 
@@ -20,7 +18,6 @@ https://brunchwithyou.github.io/ColorPicker/
 - Save and delete your color sets
 - Copy values to clipboard onclick
 - Side-by-side and fullscreen view
-
 
 ## Roadmap
 
@@ -32,12 +29,9 @@ https://brunchwithyou.github.io/ColorPicker/
 - Revisit implementation of loops to optimize event listeners
 - Consider replacing the use of transition in css for animation
 
-
 ## Noteworthy Discoveries & Bugs Encountered
+
 - Event listener is lost when using innerHTML to append a saved color set to the DOM, make use of insertAdjacentHTML instead
 - Event delegation needed for looping. Bug occurred where the trashcan needed to be clicked on twice to delete. Once to add an eventlistener and once again to actually execute the event.
 - CSS height property does not translate well when trying to use transition after a DOM removal. Use max-height instead.
 - Removing an inline style from the DOM will result in `style=""` instead of getting rid of the declaration completely.
-
-
-
